@@ -4,12 +4,6 @@ import mongoose from 'mongoose';
 import { env } from '@/app/configs/env.configs';
 import logger from '@/app/configs/logger.configs';
 
-// Force Node.js to use public DNS servers for SRV lookups (fixes Docker Desktop DNS issues)
-dns.setServers(['8.8.8.8', '1.1.1.1']);
-
-console.log(env.MONGODB_URI);
-
-
 mongoose.connection.on('error', (error) => {
   logger.error('[MongoDB] Connection error', { error });
 });
