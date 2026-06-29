@@ -14,16 +14,12 @@ let messagingInstance: any = null;
 
 if (hasFirebaseConfig) {
   try {
-    admin.initializeApp({
-      credential: admin.credential.cert(credentials as admin.ServiceAccount),
-    });
-
     const apps = getApps();
     let firebaseApp;
 
     if (!apps.length) {
       firebaseApp = initializeApp({
-        credential: cert(credentials as admin.ServiceAccount),
+        credential: cert(credentials as any),
       });
     } else {
       firebaseApp = apps[0];

@@ -6,7 +6,7 @@ class StripeService {
   private stripeClient(): Stripe {
     const key = env.STRIPE_API_SECRET_KEY ?? '';
     return new Stripe(key, {
-      apiVersion: '2026-02-25.clover',
+      apiVersion: '2026-06-24.dahlia',
       typescript: true,
     });
   }
