@@ -1,0 +1,46 @@
+name: singlerepo-backend
+
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: singlerepo_backend_redis
+    restart: unless-stopped
+    command: redis-server --requirepass ${REDIS_PASSWORD:-myStrongRedisPassword}
+    expose:
+      - "6379"
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - singlerepo_backend_net
+
+  server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile.dev
+    container_name: singlerepo_backend_server
+    restart: unless-stopped
+    env_file:
+      - ./server/.env
+    environment:
+      REDIS_HOST: redis
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-myStrongRedisPassword}
+      REDIS_PORT: 6379
+      STRIPE_API_SECRET_KEY: ${STRIPE_API_SECRET_KEY:-}
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./server/src:/usr/src/app/src
+    depends_on:
+      redis:
+        condition: service_started
+    networks:
+      - singlerepo_backend_net
+
+volumes:
+  redis_data:
+
+networks:
+  singlerepo_backend_net:
+    name: singlerepo_backend_net
