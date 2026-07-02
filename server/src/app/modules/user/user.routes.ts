@@ -4,7 +4,7 @@ import { UserControllers } from './user.controllers';
 import { UserValidation } from './user.validation';
 
 import auth from '@/app/middlewares/auth';
-import { USER_ROLE } from '@/app/schemas/modules/user/user.constant';
+import { USER_ROLE } from './user.constant';
 import validateRequest from '@/app/utils/validateRequest';
 
 const router = Router();

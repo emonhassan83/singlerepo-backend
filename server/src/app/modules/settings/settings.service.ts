@@ -3,8 +3,8 @@ import { HttpStatusCode } from 'axios';
 import ApiError from '@/app/errors/ApiError';
 import { deleteCache, deleteCachePattern, getCache, setCache } from '@/app/redis/helpers';
 import { REDIS_KEYS } from '@/app/redis/keys';
-import { GENERAL_KEYS } from '@/app/schemas/modules/settings/settings.constant';
-import { Setting } from '@/app/schemas/modules/settings/settings.schema';
+import { GENERAL_KEYS } from './settings.constant';
+import { Setting } from './settings.model';
 
 // ─── Read ──────────────────────────────────────────────────────────────────
 

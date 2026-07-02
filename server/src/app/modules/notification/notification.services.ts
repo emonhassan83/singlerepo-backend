@@ -5,9 +5,9 @@ import { emitSocketNotification } from './notification.helpers';
 import QueryBuilder from '@/app/builder/QueryBuilder';
 import ApiError from '@/app/errors/ApiError';
 import { decrementUnreadCount, setUnreadCountInRedis } from '@/app/redis/helpers/notification';
-import { INotification } from '@/app/schemas/modules/notification/notification.interface';
-import { Notification } from '@/app/schemas/modules/notification/notification.schema';
-import { User } from '@/app/schemas/modules/user/user.model';
+import { INotification } from './notification.interface';
+import { Notification } from './notification.model';
+import { User } from '@/app/modules/user/user.model';
 
 // ─── Create ────────────────────────────────────────────────────────────────
 
@@ -25,11 +25,11 @@ const sendGeneralNotificationIntoDB = async (traceId: string, payload: INotifica
   // Exclude receiver from rest so the explicit userId assignment below is the only source
   const { message, description, receiver: _originalReceiver, ...rest } = payload;
 
-  const userIds = (await User.distinct('_id', { role: 'user' })).map((id) =>
+  const userIds = (await User.distinct('_id', { role: 'user' })).map((id: any) =>
     id.toString()
   );
 
-  const notifications = userIds.map((userId) => ({
+  const notifications = userIds.map((userId: string) => ({
     ...rest,
     receiver: userId,
     message,
@@ -42,7 +42,7 @@ const sendGeneralNotificationIntoDB = async (traceId: string, payload: INotifica
   }
 
   // Emit to all receivers in parallel (fire and forget)
-  userIds.forEach((userId) =>
+  userIds.forEach((userId: string) =>
     emitSocketNotification(traceId, { ...payload, receiver: userId })
   );
 };

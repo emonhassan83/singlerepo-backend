@@ -1,8 +1,8 @@
 import { JwtPayload } from 'jsonwebtoken';
 import { Socket } from 'socket.io';
 
-import { IUserRole } from '@/app/schemas/modules/user/user.constant';
-import { IUser } from '@/app/schemas/modules/user/user.interface';
+import { IUserRole } from '@/app/modules/user/user.constant';
+import { IUser } from '@/app/modules/user/user.interface';
 
 export interface ITokenPayload extends JwtPayload {
   sub: string;

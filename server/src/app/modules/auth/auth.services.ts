@@ -14,9 +14,9 @@ import { env } from '@/app/configs/env.configs';
 import { SALT_ROUNDS } from '@/app/constant';
 import ApiError from '@/app/errors/ApiError';
 import { OtpServices } from '@/app/modules/otp/otp.services';
-import { REGISTER_WITH } from '@/app/schemas/modules/user/user.constant';
-import { ISignUpWithEmail, ISignUpWithPhone } from '@/app/schemas/modules/user/user.interface';
-import { User } from '@/app/schemas/modules/user/user.model';
+import { REGISTER_WITH } from '@/app/modules/user/user.constant';
+import { ISignUpWithEmail, ISignUpWithPhone } from '@/app/modules/user/user.interface';
+import { User } from '@/app/modules/user/user.model';
 
 // ─── Signup ────────────────────────────────────────────────────────────────
 
