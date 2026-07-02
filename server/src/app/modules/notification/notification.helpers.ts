@@ -1,4 +1,4 @@
-import { INotification } from '@/app/schemas/modules/notification/notification.interface';
+import { INotification } from './notification.interface';
 
 // DRY: both createNotification and sendGeneralNotification emit the same socket event
 export const emitSocketNotification = (

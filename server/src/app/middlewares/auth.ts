@@ -5,8 +5,8 @@ import { JwtPayload, verify } from 'jsonwebtoken';
 import { env } from '@/app/configs/env.configs';
 import { getTraceId } from '@/app/configs/requestContext.configs';
 import ApiError from '@/app/errors/ApiError';
-import { IUserRole } from '@/app/schemas/modules/user/user.constant';
-import { User } from '@/app/schemas/modules/user/user.model';
+import { IUserRole } from '@/app/modules/user/user.constant';
+import { User } from '@/app/modules/user/user.model';
 import { asyncHandler } from '@/app/utils/system.utils';
 
 const auth = (...requiredRoles: IUserRole[]) => {
@@ -40,7 +40,7 @@ const auth = (...requiredRoles: IUserRole[]) => {
       throw new ApiError(HttpStatusCode.Unauthorized, 'You are not authorized!', traceId);
     }
 
-    req.user = decoded;
+    req.user = decoded as any;
     next();
   });
 };

@@ -1,4 +1,4 @@
-import { IUserRole } from "@/app/schemas/modules/user/user.constant";
+import { IUserRole } from "@/app/modules/user/user.constant";
 
 export type TExpiresIn =
   | number

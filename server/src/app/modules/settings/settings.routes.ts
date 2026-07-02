@@ -4,7 +4,7 @@ import { SettingController } from './settings.controller';
 import { SettingValidation } from './settings.validation';
 
 import auth from '@/app/middlewares/auth';
-import { USER_ROLE } from '@/app/schemas/modules/user/user.constant';
+import { USER_ROLE } from '@/app/modules/user/user.constant';
 import validateRequest from '@/app/utils/validateRequest';
 
 const router = Router();

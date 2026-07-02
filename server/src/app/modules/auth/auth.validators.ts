@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { USER_ROLE } from '@/app/schemas/modules/user/user.constant';
+import { USER_ROLE } from '@/app/modules/user/user.constant';
 
 const signupWithEmailSchema = z.object({
   body: z.object({

@@ -1,6 +1,6 @@
 import { Socket } from 'socket.io';
 
-import { IUserRole } from '@/app/schemas/modules/user/user.constant';
+import { IUserRole } from '@/app/modules/user/user.constant';
 
 export type TSocketUser = { _id: string; email: string; role?: IUserRole };
 

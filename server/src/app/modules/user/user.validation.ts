@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { USER_ROLE, USER_STATUS } from '@/app/schemas/modules/user/user.constant';
+import { USER_ROLE, USER_STATUS } from './user.constant';
 
 const createUserValidationSchema = z.object({
   body: z

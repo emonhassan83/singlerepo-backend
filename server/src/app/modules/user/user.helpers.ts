@@ -1,9 +1,9 @@
 import { HttpStatusCode } from 'axios';
 
 import ApiError from '@/app/errors/ApiError';
-import { NOTIFICATION_MODEL_TYPE } from '@/app/schemas/modules/notification/notification.constant';
-import { ISignUpWithEmail, IGeoLocation, IUser } from '@/app/schemas/modules/user/user.interface';
-import { User } from '@/app/schemas/modules/user/user.model';
+import { NOTIFICATION_MODEL_TYPE } from '@/app/modules/notification/notification.constant';
+import { ISignUpWithEmail, IGeoLocation, IUser } from './user.interface';
+import { User } from './user.model';
 import { sendBothNotificationViaQueue } from '@/app/utils/notification-queue.service';
 
 // ─── Lean lookups — no throw, callers decide ───────────────────────────────
