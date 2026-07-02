@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { ALLOWED_KEYS, GENERAL_KEYS } from '@/app/schemas/modules/settings/settings.constant';
+import { ALLOWED_KEYS, GENERAL_KEYS } from './settings.constant';
 
 
 export type TGeneralKey = (typeof GENERAL_KEYS)[number];

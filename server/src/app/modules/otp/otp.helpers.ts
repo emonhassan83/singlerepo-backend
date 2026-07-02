@@ -11,7 +11,7 @@ import ApiError from '@/app/errors/ApiError';
 import { createToken } from '@/app/modules/auth/auth.helpers';
 import { TExpiresIn } from '@/app/modules/auth/auth.interface';
 import { OtpRedisService } from '@/app/redis/helpers/otp';
-import { User } from '@/app/schemas/modules/user/user.model';
+import { User } from '@/app/modules/user/user.model';
 import { getEmailQueueInstance } from '@/app/utils/queueHelper';
 
 const OTP_EXPIRE = 60 * 5; // 5 minutes

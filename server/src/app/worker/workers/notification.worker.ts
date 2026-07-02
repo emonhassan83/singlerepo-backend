@@ -1,6 +1,6 @@
 import { Worker, Job } from 'bullmq';
 import { getRedisClient } from '@/app/configs/redis.config';
-import { Notification } from '@/app/schemas/modules/notification/notification.schema';
+import { Notification } from '@/app/modules/notification/notification.model';
 import { emitSocketNotification } from '@/app/modules/notification/notification.helpers';
 import { messaging } from '@/app/configs/firebase.configs';
 

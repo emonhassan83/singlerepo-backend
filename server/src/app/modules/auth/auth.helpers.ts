@@ -12,7 +12,7 @@ import {
   updateUnverifiedUser,
   validateUserCreation,
 } from '@/app/modules/user/user.helpers';
-import { ISignUpWithEmail, IUser } from '@/app/schemas/modules/user/user.interface';
+import { ISignUpWithEmail, IUser } from '@/app/modules/user/user.interface';
 
 // ─── JWT ───────────────────────────────────────────────────────────────────
 

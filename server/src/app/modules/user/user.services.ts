@@ -12,9 +12,9 @@ import {
 import QueryBuilder from '@/app/builder/QueryBuilder';
 import ApiError from '@/app/errors/ApiError';
 import { generateTokens } from '@/app/modules/auth/auth.helpers';
-import { IUserStatus, USER_ROLE } from '@/app/schemas/modules/user/user.constant';
-import { IUser } from '@/app/schemas/modules/user/user.interface';
-import { User } from '@/app/schemas/modules/user/user.model';
+import { IUserStatus, USER_ROLE } from './user.constant';
+import { IUser } from './user.interface';
+import { User } from './user.model';
 
 // ─── Read ──────────────────────────────────────────────────────────────────
 

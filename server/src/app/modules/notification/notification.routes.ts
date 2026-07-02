@@ -3,7 +3,7 @@ import { Router } from 'express';
 import { NotificationControllers } from './notification.controllers';
 
 import auth from '@/app/middlewares/auth';
-import { USER_ROLE } from '@/app/schemas/modules/user/user.constant';
+import { USER_ROLE } from '@/app/modules/user/user.constant';
 
 const router = Router();
 
