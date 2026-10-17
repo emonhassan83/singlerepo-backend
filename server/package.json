@@ -33,7 +33,7 @@
     "express": "^5.2.1",
     "firebase-admin": "^14.1.0",
     "geolib": "^3.3.14",
-    "handlebars": "^4.7.9",
+    "handlebars": "^4.7.10",
     "helmet": "^8.2.0",
     "ioredis": "^5.11.1",
     "jsonwebtoken": "^9.0.3",
