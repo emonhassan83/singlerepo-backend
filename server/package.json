@@ -51,7 +51,7 @@
     "twilio": "^6.0.2",
     "uuid": "^14.0.1",
     "winston": "^3.19.0",
-    "zod": "^4.4.3"
+    "zod": "^4.6.6"
   },
   "devDependencies": {
     "@types/bcrypt": "^6.0.0",
